@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="overlay"></div>
+      <div class="title">
+        <h1>Know Your Weather</h1>
+
+        <form class="form">
+          <label for="city">Enter a location for weather information</label>
+          <input
+            type="text"
+            name="city"
+            placeholder="Enter Location"
+            class="search-box"
+            autocomplete="off"
+          />
+          <p class="instruction">Enter city, country code. Eg: hanoi, vn</p>
+        </form>
+        <div class="alert" style="display: none">
+          <p></p>
+        </div>
+      </div>
+      <div class="weather-content">
+        <div class="image-placeHolder"></div>
+
+        <div class="general-display">
+          <div class="condition">Weather Condition</div>
+          <div class="icon-container" style="display: none">
+            <image data-icon></image>
+          </div>
+          <div class="location">Location</div>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <div class="label">Temp</div>
+            <div class="value temperature">
+              <span>N/A</span><span class="unit">&deg;C</span>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="label">Pressure</div>
+            <div class="value pressure">
+              <span>N/A</span><span class="unit">hPa</span>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="label">Humidity</div>
+            <div class="value humidity">
+              <span>N/A</span><span class="unit">%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script/app.js"></script>
+  </body>
+</html>
