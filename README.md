@@ -2,7 +2,7 @@
 
 Hosted link: https://tonyduongit.github.io/WeatherApp/
 
-Screen Shot:
+Screen Shots:
 
 ![alt text](https://user-images.githubusercontent.com/37773202/76440696-d2504c00-63f0-11ea-8b29-2083beddeab1.PNG)
 
