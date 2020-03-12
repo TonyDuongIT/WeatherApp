@@ -12,7 +12,7 @@ const loc = document.querySelector(".location");
 const temp = document.querySelector(".temperature");
 const pressure = document.querySelector(".pressure");
 const humidity = document.querySelector(".humidity");
-
+const weatherContent = document.querySelector(".weather-content");
 const icon = document.querySelector("[data-icon]");
 
 const getWeather = async cityName => {
@@ -48,7 +48,8 @@ const updateUI = (data, cityName) => {
     }
   } else {
     alert.style.display = "none";
-    icon_wrapper.style.display = "inline-block";
+    weatherContent.style.display = "block";
+    // icon_wrapper.style.display = "inline-block";
     loc.textContent = `${data.name}, ${data.sys.country}`;
     condition.textContent = `${data.weather[0].description}`;
     // temp.textContent = `${data.main.temp}`;
