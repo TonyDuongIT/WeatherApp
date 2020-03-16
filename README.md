@@ -1,6 +1,6 @@
 # WeatherApp
 
-Hosted link: https://tonyduongit.github.io/WeatherApp/
+Hosted link: (https://tonyduongit.github.io/WeatherApp/)
 
 Description:
 A simple weather app, displays information regarding the current weather condition.
