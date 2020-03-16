@@ -84,7 +84,7 @@ form {
 // Weather content
 .weather-content {
   position: relative;
-  margin-top: 1.25em;
+  margin-top: 2em;
   text-align: center;
 
   .general-display {
@@ -120,7 +120,7 @@ form {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 1fr);
-    margin-top: 1.5em;
+    margin-top: 2.5em;
 
     .detail {
       padding: 1em;
@@ -330,7 +330,7 @@ form {
     font-size: 1.1em;
   }
   .weather-content {
-    margin-top: 1.3em;
+    margin-top: 2em;
 
     .condition {
       margin-bottom: 0.75em;
