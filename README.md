@@ -7,6 +7,7 @@ Description: </br>
 - User type in the location of their preference and the UI will display the information about Temperature, Humidity and Pressure.
 - This application uses Openweather API free feature which is "Current weather data", allows fetching current weather data. The typing process is kinda unpleasing, the location you type in HAVE TO follow this format "City name, Country Code". </br>
 For example, if you want to get the current weather info about New York, you'll be typing "New York, US" in the search box. 
+- The switching background images that you see are from source.unsplash.com 
 
 Screen Shots:
 
