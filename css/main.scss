@@ -4,93 +4,24 @@
   box-sizing: border-box;
 }
 
-.day {
-  height: 100vh;
-  position: relative;
-
-  &::before {
-    content: "";
-    background: rgb(22, 22, 22);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-  }
-}
-
-.night {
-  height: 100vh;
-  position: relative;
-
-  &::before {
-    content: "";
-    background: rgb(31, 31, 31);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.6;
-  }
-}
-
 body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1em;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
   background: rgb(255, 249, 249);
+  overflow: hidden;
 }
 
-// .container {
-//   width: 100vw;
-// }
-
-form {
-  // position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.container {
+  // display: block;
+  height: 100vh;
   width: 100%;
-  text-align: center;
-  margin: 0 auto;
-}
-form > label {
-  padding-bottom: 1em;
-}
-
-form > .search-box {
-  width: 20%;
-  padding: 0.5em;
-}
-form > .instruction {
-  font-family: "Roboto", sans-serif;
-  // position: absolute;
-
-  // top: 100%;
-  margin: 0.25em auto;
-  padding: 0.5em;
-  font-size: 0.8em;
-  // letter-spacing: 1px;
-  // word-spacing: 3;
-  // font-weight: 500;
-}
-.alert {
-  font-family: "Roboto", sans-serif;
-  margin: 0.5em auto;
-  padding: 0.5em 1em;
-  font-size: 0.8em;
-  background: rgb(250, 206, 206);
-  color: rgb(197, 0, 0);
-  border: 3px solid rgb(250, 206, 206);
-  border-radius: 5%;
-}
-
-.title {
   position: relative;
-  padding: 0.5rem;
-  padding-top: 2em;
+  background: rgb(22, 22, 22);
+}
+.header {
+  position: relative;
+  padding: 0.5em;
+  padding-top: 1.4em;
   // margin: 2em auto 0.7em;
   text-align: center;
 
@@ -102,6 +33,54 @@ form > .instruction {
   }
 }
 
+// Form styling
+form {
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+
+  & > label {
+    padding-bottom: 1em;
+  }
+
+  & > .search-box {
+    width: 20%;
+    padding: 0.5em;
+    z-index: 99;
+  }
+
+  & > .instruction {
+    font-family: "Roboto", sans-serif;
+    // position: absolute;
+
+    // top: 100%;
+    margin: 0.25em auto;
+    padding: 0.5em;
+    font-size: 0.9em;
+    // letter-spacing: 1px;
+    // word-spacing: 3;
+    // font-weight: 500;
+  }
+}
+
+// Alert box
+.alert {
+  font-family: "Roboto", sans-serif;
+  margin: 0.5em auto;
+  padding: 0.5em 1em;
+  font-size: 0.87em;
+  background: rgb(250, 206, 206);
+  color: rgb(197, 0, 0);
+  border: 3px solid rgb(250, 206, 206);
+  border-radius: 5%;
+}
+
+// Weather content
 .weather-content {
   position: relative;
   margin-top: 1.25em;
@@ -110,8 +89,8 @@ form > .instruction {
   .general-display {
     .icon-container {
       .clear {
-        background: rgb(197, 233, 255);
-        border: 3px solid rgb(197, 233, 255);
+        background: rgb(255, 228, 197);
+        border: 3px solid rgb(255, 228, 197);
         border-radius: 30%;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
       }
@@ -127,20 +106,20 @@ form > .instruction {
   .condition {
     font-size: 1.5em;
     font-weight: 800;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75em;
     text-transform: capitalize;
   }
   .location {
     font-size: 1.2em;
     font-weight: 800;
-    margin-top: 0.75rem;
+    margin-top: 0.75em;
   }
 
   .details {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 1fr);
-    padding-top: 1em;
+    margin-top: 1.5em;
 
     .detail {
       padding: 1em;
@@ -169,9 +148,90 @@ form > .instruction {
   // width: 50%;
 }
 
-@media only screen and (min-width: 1600px) {
+// Set the background image
+// .day_night {
+//   height: 100vh;
+//   position: relative;
+//   background: no-repeat center center / cover;
+//   // z-index: -2;
+//   &::before {
+//     content: "";
+//     background: rgb(22, 22, 22);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     opacity: 0.6;
+//   }
+// }
+
+//Background image
+.bg-img > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+//background loader fade animation
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden {
+  animation: loadAnimate 1s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes loadAnimate {
+  from {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -99;
+  }
+}
+
+//icon image fade animation
+[data-icon].active {
+  animation: fadeAnimate 2s 1;
+}
+
+@keyframes fadeAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//query for browser zoom in
+@media only screen and (max-height: 550px) {
+  .day {
+    height: 100%;
+  }
+  .night {
+    height: 100%;
+  }
+}
+
+// media query for large screen
+@media only screen and (min-width: 1400px) {
   body {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   form > .search-box {
@@ -180,20 +240,89 @@ form > .instruction {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 1980px) {
   body {
-    font-size: 0.65em;
-  }
-
-  .title > h1 {
     font-size: 1.7em;
   }
 
+  form > .search-box {
+    padding: 0.6em;
+    font-size: 0.7em;
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 2100px) {
+  body {
+    font-size: 2.3em;
+  }
+  .container {
+    padding-bottom: 20%;
+  }
+  form > .search-box {
+    font-size: 0.8em;
+    padding: 0.6em;
+    width: 20%;
+  }
+}
+
+//meida query for ipad
+@media (max-width: 768px) {
+  body {
+    font-size: 0.8em;
+  }
+  .alert {
+    font-size: 0.9em;
+  }
+  form > .search-box {
+    width: 30%;
+  }
+}
+
+//meida query for ipad pro
+@media (max-width: 1024px) {
+  body {
+    font-size: 0.8em;
+  }
+  .header h1 {
+    padding-bottom: 0.5em;
+  }
+  .details {
+    font-size: 1.2em;
+  }
+  .alert {
+    font-size: 0.9em;
+  }
+  .condition {
+    font-size: 1em;
+  }
+  .location {
+    font-size: 1em;
+  }
+}
+
+// media query for mobile
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 0.6em;
+  }
+
+  .loader {
+    width: 100%;
+    height: 70vh;
+  }
+  .header > h1 {
+    font-size: 2.5em;
+  }
+
+  .alert {
+    font-size: 1.1em;
+  }
   .weather-content {
-    margin-top: 2em;
+    margin-top: 1.3em;
 
     .condition {
-      margin-bottom: 1em;
+      margin-bottom: 0.75em;
       font-size: 2em;
     }
     .location {
@@ -201,6 +330,7 @@ form > .instruction {
     }
     .details {
       margin-top: 1em;
+      padding-top: 0em;
       grid-template-columns: repeat(2, 1fr);
       // grid-template-rows: repeat(3, 1fr);
 
@@ -222,13 +352,18 @@ form > .instruction {
   form {
     margin-top: 1em;
     & > .search-box {
-      padding: 0.8em;
-      width: 70%;
+      font-size: 1.2em;
+      padding: 0.4em;
+      width: 50%;
     }
 
     & > .instruction {
-      font-size: 1em;
+      font-size: 1.2em;
       width: 100%;
+    }
+
+    & > label {
+      font-size: 1.2em;
     }
   }
 }

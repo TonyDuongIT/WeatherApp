@@ -15,13 +15,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather App</title>
   </head>
-  <body>
+  <body onload="Fade()">
     <div class="container">
-      <div class="overlay"></div>
-      <div class="title">
+      <!-- loading gif -->
+      <img class="loader" src="img/loader.gif" alt="Loading" />
+      <div class="bg-img" style="display: none;">
+        <img src="" alt="" />
+      </div>
+
+      <!-- Header: contains title, form (search-box, instruction) -->
+      <div class="header">
         <h1>Know Your Weather</h1>
 
-        <form class="form">
+        <form class="form" onsubmit="Fade()">
           <label for="city">Enter a location for weather information</label>
           <input
             type="text"
@@ -36,9 +42,11 @@
           <p></p>
         </div>
       </div>
-      <div class="weather-content" style="display:none">
-        <div class="image-placeHolder"></div>
 
+      <!-- Weather content includes all the details about weather condition -->
+      <div class="weather-content" style="display:none">
+        <!-- General display includes:  -->
+        <!--  weather condition(text), icon(image), location(text)  -->
         <div class="general-display">
           <div class="condition">Weather Condition</div>
           <div class="icon-container">
@@ -46,6 +54,8 @@
           </div>
           <div class="location">Location</div>
         </div>
+
+        <!-- Weather condition detail: temperature, pressure, humidity -->
         <div class="details">
           <div class="detail">
             <div class="label">Temp</div>
