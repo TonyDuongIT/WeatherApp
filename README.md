@@ -5,8 +5,7 @@ Hosted link: https://tonyduongit.github.io/WeatherApp/
 Description: </br>
 - A simple weather app, displays information regarding the current weather condition.
 - User type in the location of their preference and the UI will display the information about Temperature, Humidity and Pressure.
-- This application uses Openweather API free feature. Thus, there're some limitations to the app, making it difficult to use.</br> 
-Specifically, in order to get the weather information of a loacation, you have to type in the location and YOU HAVE TO type according to this format "City name, Country Code". </br>
+- This application uses Openweather API free feature. Thus, there're some limitations to the app, making it difficult to use. Specifically, in order to get the weather information of a loacation, you have to type in the location and YOU HAVE TO type according to this format "City name, Country Code". </br>
 For example, if you want to get the current weather info about New York, you'll be typing "New York, US" in the search box. 
 
 Screen Shots:
